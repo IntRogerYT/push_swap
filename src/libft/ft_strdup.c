@@ -6,11 +6,11 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/26 14:38:19 by rcamps-v          #+#    #+#             */
-/*   Updated: 2025/10/28 12:33:43 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/04 15:07:27 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 char	*ft_strdup(const char *s)
 {
