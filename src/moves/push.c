@@ -6,19 +6,40 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:10:02 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/04 16:27:57 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/05 14:01:04 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push(t_stack **stack_a, t_stack **stack_b)
+void	ft_push(t_stack **stack_start, t_stack **stack_dest)
 {
-	t_stack	*ptr1;
-	t_stack	*ptr2;
+	t_stack	*ptr;
 
-	if (!stack_a || !stack_b)
+	if (!*stack_start)
 		return ;
-	ptr1 = *stack_a;
-	ptr2 = *stack_a->next;
+	ptr = *stack_a;
+	*stack_start = (*stack_start)->next;
+	if (!*stack_dest)
+	{
+		*stack_dest = ptr;
+		(*stack_dest) = NULL;
+	}
+	else
+	{
+		ptr->next = *stack_dest;
+		*stack_dest = ptr;
+	}
+}
+
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_b, stack_a);
+	write(1, "pa\n", 3);
+}
+
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_push(stack_a, stack_b);
+	write(1, "pb\n", 3);
 }

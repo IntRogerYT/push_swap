@@ -9,7 +9,9 @@ OBJS_DIR = objs
 SRCS_LIBFT = $(SRCS_DIR)/libft/ft_strlen.c \
 			 $(SRCS_DIR)/libft/ft_strdup.c
 SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
-			 $(SRCS_DIR)/moves/swap.c
+			 $(SRCS_DIR)/moves/swap.c \
+			 $(SRCS_DIR)/moves/rotate.c \
+			 $(SRCS_DIR)/moves/reverse_rotate.c
 
 SRCS = $(SRCS_LIBFT) $(SRCS_MOVES)
 
