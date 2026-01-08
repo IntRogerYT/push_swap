@@ -6,11 +6,11 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 14:15:01 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/05 19:04:49 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/07 11:16:55 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

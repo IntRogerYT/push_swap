@@ -6,11 +6,11 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:14:43 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/05 19:04:00 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/07 10:37:16 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 int	ft_words_count(char const *s, char c)
 {

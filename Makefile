@@ -1,15 +1,18 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(INCLUDES_DIR)
+CFLAGS = -I$(INCLUDES_DIR)
 INCLUDES_DIR = includes
 SRCS_DIR = src
 OBJS_DIR = objs
 
+DIRS = $(OBJS_DIR) $(OBJS_DIR)/moves $(OBJS_DIR)/validate $(OBJS_DIR)/libft
+
 SRCS_LIBFT = $(SRCS_DIR)/libft/ft_strlen.c \
 			 $(SRCS_DIR)/libft/ft_strdup.c \
 			 $(SRCS_DIR)/libft/ft_split.c \
-			 $(SRCS_DIR)/libft/ft_substr.c
+			 $(SRCS_DIR)/libft/ft_substr.c \
+			 $(SRCS_DIR)/libft/ft_atoi.c
 SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
 			 $(SRCS_DIR)/moves/swap.c \
 			 $(SRCS_DIR)/moves/rotate.c \
@@ -17,7 +20,7 @@ SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
 SRCS_VALIDATE = $(SRCS_DIR)/validate/check_valid_input.c
 SRC_MAIN = $(SRCS_DIR)/main.c
 
-SRCS = $(SRC_MAIN) $(SRCS_LIBFT) $(SRCS_MOVES) $(VALIDATE)
+SRCS = $(SRC_MAIN) $(SRCS_LIBFT) $(SRCS_MOVES) $(SRCS_VALIDATE)
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 

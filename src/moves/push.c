@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/04 16:10:02 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/05 14:01:04 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/07 10:53:09 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_push(t_stack **stack_start, t_stack **stack_dest)
 
 	if (!*stack_start)
 		return ;
-	ptr = *stack_a;
+	ptr = *stack_start;
 	*stack_start = (*stack_start)->next;
 	if (!*stack_dest)
 	{

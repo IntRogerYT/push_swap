@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/05 19:08:22 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/07 11:06:44 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <stdio.h>
 /********************************/
 /*           MACROS             */
 /********************************/
@@ -43,6 +44,7 @@ char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
+int		ft_atoi(const char *nptr);
 // === Swap functions ===
 void	ft_swap(t_stack **stack);
 void	ft_sa(t_stack **stack);
@@ -62,6 +64,8 @@ void	ft_reverse_rotate(t_stack **stack);
 void	ft_rra(t_stack **stack);
 void	ft_rrb(t_stack **stack);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
+// === Validate and parse functions ===
+int 	*validate_and_parse(char *input);
 // === Main function ===
 int		main(int argc, char **argv);
 #endif
