@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/08 13:53:55 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:38:31 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 long	ft_atol(const char *nptr);
+int		ft_is_number(const char *nptr);
 // === Swap functions ===
 void	ft_swap(t_stack **stack);
 void	ft_sa(t_stack **stack);
@@ -65,11 +66,11 @@ void	ft_rra(t_stack **stack);
 void	ft_rrb(t_stack **stack);
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
 // === Validate and parse functions ===
-int 	*validate_and_parse(int argc, char **argv, int *size);
+int		*validate_and_parse(int argc, char **argv, int *size);
 int		num_args(char **args);
 char	**remove_first_arg(char **argv);
 int		*ft_atol_and_validation(char **matrix);
-void	nums_validation(long *nums_array);
+void	nums_validation(long *nums_array, int len);
 // === Utils functions ===
 void	free_and_exit(int code_error, char **matrix, long *nums_array);
 // === Main function ===

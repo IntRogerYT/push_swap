@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:54:38 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/08 15:29:25 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:35:40 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	nums_validation(long *nums_array, int len)
 {
 	int	i;
-	while(i < len)
+
+	i = 0;
+	while (i < len)
 	{
 		if (nums_array[i] <= INT_MIN || nums_array[i] >= INT_MAX)
 			free_and_exit(1, NULL, nums_array);
@@ -31,24 +33,24 @@ int	*ft_atol_and_validation(char **matrix)
 	int		i;
 
 	len = num_args(matrix);
-	temp = malloc(len * sizeof(long));
+	temp = malloc((len + 1) * sizeof(long));
 	if (!temp)
 		free_and_exit(1, matrix, 0);
 	i = 0;
-	while(matrix[i])
+	while (matrix[i])
 	{
 		temp[i] = ft_atol(matrix[i]);
 		i++;
 	}
+	temp[i] = 0;
 	nums_validation(temp, len);
 	nums_array = malloc(len * sizeof(int));
 	if (!nums_array)
 		free_and_exit(1, matrix, temp);
 	i = -1;
-	while(i++ <= len)
+	while (++i < len)
 		nums_array[i] = (int)temp[i];
-	free(temp);
-	return (nums_array);
+	return (free(temp), nums_array);
 }
 
 int	num_args(char **args)
@@ -70,7 +72,7 @@ char	**remove_first_arg(char **argv)
 	n_args = num_args(argv);
 	matrix = malloc(n_args * sizeof(char *));
 	if (!matrix)
-		return (NULL);
+		free_and_exit(1, matrix, 0);
 	i = 1;
 	while (argv[i])
 	{

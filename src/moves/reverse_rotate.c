@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 14:32:19 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/05 14:58:24 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/09 12:21:36 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_reverse_rotate(t_stack **stack)
 	if (!*stack || !(*stack)->next)
 		return ;
 	last = *stack;
-	while(last->next)
+	while (last->next)
 		last = last->next;
 	iter = *stack;
-	while(iter->next != last)
+	while (iter->next != last)
 		iter = iter->next;
 	iter->next = NULL;
 	last->next = *stack;
