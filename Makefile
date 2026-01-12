@@ -6,22 +6,27 @@ INCLUDES_DIR = includes
 SRCS_DIR = src
 OBJS_DIR = objs
 
-DIRS = $(OBJS_DIR) $(OBJS_DIR)/moves $(OBJS_DIR)/validate $(OBJS_DIR)/libft $(OBJS_DIR)/utils
+DIRS = $(OBJS_DIR) $(OBJS_DIR)/moves $(OBJS_DIR)/validate $(OBJS_DIR)/libft $(OBJS_DIR)/utils $(OBJS_DIR)/sorting
 
 SRCS_LIBFT = $(SRCS_DIR)/libft/ft_strlen.c \
 			 $(SRCS_DIR)/libft/ft_strdup.c \
 			 $(SRCS_DIR)/libft/ft_split.c \
 			 $(SRCS_DIR)/libft/ft_substr.c \
-			 $(SRCS_DIR)/libft/ft_atol.c
+			 $(SRCS_DIR)/libft/ft_atol.c \
+			 $(SRCS_DIR)/libft/ft_lstnew.c \
+			 $(SRCS_DIR)/libft/ft_lstadd_back.c \
+			 $(SRCS_DIR)/libft/ft_lstlast.c
 SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
 			 $(SRCS_DIR)/moves/swap.c \
 			 $(SRCS_DIR)/moves/rotate.c \
 			 $(SRCS_DIR)/moves/reverse_rotate.c
 SRCS_VALIDATE = $(SRCS_DIR)/validate/check_valid_input.c
-SRCS_UTILS = $(SRCS_DIR)/utils/free_functions.c
+SRCS_UTILS = $(SRCS_DIR)/utils/free_functions.c \
+			 $(SRCS_DIR)/utils/array_to_list_conversion.c
+SRCS_SORTING = $(SRCS_DIR)/sorting/sorting.c
 SRC_MAIN = $(SRCS_DIR)/main.c
 
-SRCS = $(SRC_MAIN) $(SRCS_LIBFT) $(SRCS_MOVES) $(SRCS_VALIDATE) $(SRCS_UTILS)
+SRCS = $(SRC_MAIN) $(SRCS_LIBFT) $(SRCS_MOVES) $(SRCS_VALIDATE) $(SRCS_UTILS) $(SRCS_SORTING)
 
 OBJS = $(SRCS:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 

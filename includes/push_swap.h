@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/09 12:38:31 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/09 14:44:18 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char const *s, char c);
 long	ft_atol(const char *nptr);
 int		ft_is_number(const char *nptr);
+t_stack	*ft_lstnew(void *content);
+void   	ft_lstadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstlast(t_stack *lst);
 // === Swap functions ===
 void	ft_swap(t_stack **stack);
 void	ft_sa(t_stack **stack);
@@ -73,6 +76,9 @@ int		*ft_atol_and_validation(char **matrix);
 void	nums_validation(long *nums_array, int len);
 // === Utils functions ===
 void	free_and_exit(int code_error, char **matrix, long *nums_array);
+void	lst_conversion(t_stack  **stack, int *nums_array, int size);
+// === Sorting ===
+int		sorting();
 // === Main function ===
 int		main(int argc, char **argv);
 #endif
