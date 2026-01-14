@@ -20,7 +20,8 @@ SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
 			 $(SRCS_DIR)/moves/swap.c \
 			 $(SRCS_DIR)/moves/rotate.c \
 			 $(SRCS_DIR)/moves/reverse_rotate.c
-SRCS_VALIDATE = $(SRCS_DIR)/validate/check_valid_input.c
+SRCS_VALIDATE = $(SRCS_DIR)/validate/check_valid_input.c \
+				$(SRCS_DIR)/validate/parse_one_arg.c
 SRCS_UTILS = $(SRCS_DIR)/utils/free_functions.c \
 			 $(SRCS_DIR)/utils/array_to_list_conversion.c
 SRCS_SORTING = $(SRCS_DIR)/sorting/sorting.c

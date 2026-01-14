@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   parse_one_arg.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/09 12:05:23 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/14 12:35:20 by rcamps-v         ###   ########.fr       */
+/*   Created: 2026/01/14 11:35:10 by rcamps-v          #+#    #+#             */
+/*   Updated: 2026/01/14 12:29:26 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	binary_conversion(t_stack *stack, char *binary)
+int	*parse_one_arg(char *args, int *size)
 {
-	int		n;
-	int		total_bits;
-	int		bit_pos;
-	int		i;
+	int		len;
+	int		*nums_array;
+	char	**matrix;
 
-	if (!stack)
+	if (!args)
 		free_and_exit(1, NULL, 0);
-	if (!(stack->content))
+	matrix = ft_split(args, ' ');
+	if (!matrix)
 		free_and_exit(1, NULL, 0);
-	n = stack->content;
-	total_bits = sizeof(int) * 8;
-	i = 0;
-	while (i < total_bits)
-	{
-		bit_pos = (total_bits -1) - i;
-		if ((n >> bit_pos) & 1)
-			binary[i] = '1';
-		else
-			binary[i] = '0';
-		i++;
-		binary[total_bits] = '\0';
-	}
-}
-
-void	sort_and_print(t_stack **stack_a, t_stack **stack_b, int size)
-{
-
+	len = 0;
+	while (matrix[len])
+		len++;
+	nums_array = malloc(len * sizeof(int));
+	if (!nums_array)
+		free_and_exit(1, NULL, 0);
+	nums_array = ft_atol_and_validation(matrix);
+	free(matrix);
+	return (*size = len, nums_array);
 }
