@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:47:36 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/14 12:33:35 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/14 15:04:40 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	sorting(t_stack **stack_a, t_stack **stack_b, int *nums, int size)
 {
-	sort_and_print(stack_a, stack_b, size);
+
 }
 
 int	main(int argc, char **argv)
@@ -40,8 +40,13 @@ int	main(int argc, char **argv)
 		if (!clean_input)
 			return (write(1, "Error\n", 6), 0);
 	}
+	lst_conversion(&stack_a, clean_input, size);
+	set_index(&stack_a, size);
 	i = -1;
-	while (++i < size)
-		printf("%i\n", clean_input[i]);
+	while (stack_a)
+	{
+		printf("%i\n", stack_a->index);
+		stack_a = stack_a->next;
+	}
 	return (0);
 }

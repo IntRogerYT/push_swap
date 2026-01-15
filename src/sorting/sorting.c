@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 12:05:23 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/14 12:35:20 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/14 15:02:44 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,42 @@ void	binary_conversion(t_stack *stack, char *binary)
 	}
 }
 
-void	sort_and_print(t_stack **stack_a, t_stack **stack_b, int size)
+t_stack	*find_lowest(t_stack *stack)
 {
+	t_stack	*lowest;
 
+	lowest = NULL;
+	while (stack)
+	{
+		if (stack->index == -1
+			&& (lowest == NULL || stack->content < lowest->content))
+		{
+			lowest = stack;
+		}
+		stack = stack->next;
+	}
+	return (lowest);
+}
+
+void	set_index(t_stack **stack, int size)
+{
+	int		i;
+	t_stack	*temp;
+
+	temp = *stack;
+	while (temp)
+	{
+		temp->index = -1;
+		temp = temp->next;
+	}
+	i = 0;
+	while (i < size)
+	{
+		temp = find_lowest(*stack);
+		if (temp != NULL)
+		{
+			temp->index = i;
+		}
+		i++;
+	}
 }
