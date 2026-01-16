@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/14 15:02:11 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/16 12:20:11 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ typedef struct s_stack
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	**ft_split(char const *s, char c);
+char	**ft_split(char *s, char c);
 long	ft_atol(const char *nptr);
 int		ft_is_number(const char *nptr);
 t_stack	*ft_lstnew(int content);
-void   	ft_lstadd_back(t_stack **lst, t_stack *new);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
 // === Swap functions ===
 void	ft_swap(t_stack **stack);
 void	ft_sa(t_stack **stack);
@@ -78,13 +79,23 @@ void	nums_validation(long *nums_array, int len);
 int		*parse_one_arg(char *args, int *size);
 // === Utils functions ===
 void	free_and_exit(int code_error, char **matrix, long *nums_array);
-void	free_stacks(int code_error, t_stack *stack_a, t_stack *stack_b);
-void	lst_conversion(t_stack  **stack, int *nums_array, int size);
+void	free_stacks(int code_error, t_stack **stack_a, t_stack **stack_b);
+void	free_and_finish(t_stack **stack_a, t_stack **stack_b);
+void	free_matrix(char **matrix);
+void	lst_conversion(t_stack **stack, int *nums_array, int size);
 // === Sorting ===
-void	binary_conversion(t_stack *stack, char *binary);
+int		has_duplicates(t_stack *stack);
+void	binary_conversion(int n, char **binary);
 t_stack	*find_lowest(t_stack *stack);
 void	set_index(t_stack **stack, int size);
+int		check_order(t_stack *stack, int size);
+void	radix_sort(t_stack **stack_a, t_stack **stack_b, int *size);
+void	sort_time(t_stack **stack_a, t_stack **stack_b, int i);
+void	sort_short(t_stack **stack_a, t_stack **stack_b, int curr_size);
+void	three_nbrs(t_stack **stack_a, t_stack **stack_b, t_stack **next);
+void	four_five_nbrs(t_stack **stack_a, t_stack **stack_b, int curr_size);
+void	sort_five_nbrs(t_stack **stack_a, t_stack **stack_b);
 // === Main function ===
-void	nums_validation(long *nums_array, int len);
+void	sorting(t_stack **stack_a, t_stack **stack_b, int *size);
 int		main(int argc, char **argv);
 #endif

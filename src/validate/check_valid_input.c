@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:54:38 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/09 12:35:40 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/16 13:27:25 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	nums_validation(long *nums_array, int len)
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (i < len && nums_array[i])
 	{
-		if (nums_array[i] <= INT_MIN || nums_array[i] >= INT_MAX)
+		if (nums_array[i] < INT_MIN || nums_array[i] > INT_MAX)
 			free_and_exit(1, NULL, nums_array);
 		i++;
 	}
@@ -72,7 +72,7 @@ char	**remove_first_arg(char **argv)
 	n_args = num_args(argv);
 	matrix = malloc(n_args * sizeof(char *));
 	if (!matrix)
-		free_and_exit(1, matrix, 0);
+		free_and_exit(1, NULL, 0);
 	i = 1;
 	while (argv[i])
 	{
@@ -93,9 +93,6 @@ int	*validate_and_parse(int argc, char **argv, int *size)
 	len = 0;
 	while (matrix[len])
 		len++;
-	nums_array = malloc(len * sizeof(int));
-	if (!nums_array)
-		free_and_exit(1, matrix, 0);
 	nums_array = ft_atol_and_validation(matrix);
 	free(matrix);
 	return (*size = len, nums_array);

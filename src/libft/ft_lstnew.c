@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 12:12:28 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/14 12:22:54 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/16 12:13:17 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*ft_lstnew(int content)
 
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
-		return (NULL);
+		free_stacks(1, &new_node, NULL);
 	new_node->content = content;
 	new_node->next = NULL;
 	return (new_node);

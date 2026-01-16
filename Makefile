@@ -15,7 +15,8 @@ SRCS_LIBFT = $(SRCS_DIR)/libft/ft_strlen.c \
 			 $(SRCS_DIR)/libft/ft_atol.c \
 			 $(SRCS_DIR)/libft/ft_lstnew.c \
 			 $(SRCS_DIR)/libft/ft_lstadd_back.c \
-			 $(SRCS_DIR)/libft/ft_lstlast.c
+			 $(SRCS_DIR)/libft/ft_lstlast.c \
+			 $(SRCS_DIR)/libft/ft_lstsize.c
 SRCS_MOVES = $(SRCS_DIR)/moves/push.c \
 			 $(SRCS_DIR)/moves/swap.c \
 			 $(SRCS_DIR)/moves/rotate.c \
@@ -24,7 +25,9 @@ SRCS_VALIDATE = $(SRCS_DIR)/validate/check_valid_input.c \
 				$(SRCS_DIR)/validate/parse_one_arg.c
 SRCS_UTILS = $(SRCS_DIR)/utils/free_functions.c \
 			 $(SRCS_DIR)/utils/array_to_list_conversion.c
-SRCS_SORTING = $(SRCS_DIR)/sorting/sorting.c
+SRCS_SORTING = $(SRCS_DIR)/sorting/sorting.c \
+			   $(SRCS_DIR)/sorting/sorting_utils.c \
+			   $(SRCS_DIR)/sorting/sorting_four_five.c
 SRC_MAIN = $(SRCS_DIR)/main.c
 
 SRCS = $(SRC_MAIN) $(SRCS_LIBFT) $(SRCS_MOVES) $(SRCS_VALIDATE) $(SRCS_UTILS) $(SRCS_SORTING)

@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 11:56:52 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/15 15:26:58 by rcamps-v         ###   ########.fr       */
+/*   Created: 2025/12/19 13:14:00 by rcamps-v          #+#    #+#             */
+/*   Updated: 2026/01/15 14:18:54 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+int	ft_lstsize(t_stack *lst)
 {
-	t_stack	*last;
+	t_stack	*aux;
+	int		i;
 
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
+	i = 0;
+	aux = lst;
+	while (aux)
 	{
-		*lst = new;
-		return ;
+		i++;
+		aux = aux->next;
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	return (i);
 }

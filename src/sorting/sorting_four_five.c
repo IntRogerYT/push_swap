@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   sorting_four_five.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
+/*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 11:56:52 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/15 15:26:58 by rcamps-v         ###   ########.fr       */
+/*   Created: 2026/01/16 11:10:23 by rcamps-v          #+#    #+#             */
+/*   Updated: 2026/01/16 12:12:52 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+void	sort_five_nbrs(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*last;
-
-	if (!lst || !new)
-		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	last = ft_lstlast(*lst);
-	last->next = new;
+	three_nbrs(stack_a, stack_b, &((*stack_a)->next));
+	while (*stack_b != NULL)
+		ft_pa(stack_a, stack_b);
+	free_and_finish(stack_a, stack_b);
 }

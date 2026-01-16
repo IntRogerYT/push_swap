@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 13:22:09 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/09 12:36:46 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/15 10:19:03 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ long	ft_atol(const char *nptr)
 			sign = -1;
 		i++;
 	}
-	if (ft_is_number(nptr + i) == 1)
+	if (ft_is_number(nptr + i) == 1 || nptr[i] == '\0')
 		free_and_exit(1, NULL, 0);
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
