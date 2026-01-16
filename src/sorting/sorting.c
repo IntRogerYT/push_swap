@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:52:43 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 12:10:36 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/16 14:26:41 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ void	sort_short(t_stack **stack_a, t_stack **stack_b, int curr_size)
 	t_stack	*next;
 
 	if (curr_size == 2)
+	{
 		ft_sa(stack_a);
+		free_and_finish(stack_a, stack_b);
+	}
 	else if (curr_size == 3)
 		three_nbrs(stack_a, stack_b, &next);
 	else

@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:54:38 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 13:27:25 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/16 16:04:18 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ int	num_args(char **args)
 	i = 0;
 	while (args[i])
 		i++;
+	if (i == 1)
+	{
+		free(args);
+		exit(0);
+	}
 	return (i);
 }
 
