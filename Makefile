@@ -1,7 +1,7 @@
 NAME = push_swap
 
 CC = cc
-CFLAGS = -I$(INCLUDES_DIR) -g
+CFLAGS = -Wall -Wextra -Werror -I $(INCLUDES_DIR) -g -O3
 INCLUDES_DIR = includes
 SRCS_DIR = src
 OBJS_DIR = objs

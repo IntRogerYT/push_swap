@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 11:35:10 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 14:27:51 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:58:55 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ int	*parse_one_arg(char *args, int *size)
 	len = 0;
 	while (matrix[len])
 		len++;
-	nums_array = malloc(len * sizeof(int));
-	if (!nums_array)
-		free_and_exit(1, NULL, 0);
 	nums_array = ft_atol_and_validation(matrix);
 	free(matrix);
+	free(nums_array);
 	return (*size = len, nums_array);
 }

@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:14:43 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 12:22:08 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 13:48:56 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,13 @@ char	**ft_split(char *s, char c)
 	matrix = malloc((ft_words_count(s, c) + 1) * sizeof(char *));
 	if (!matrix)
 		return (NULL);
+	if (words == 1)
+	{
+		matrix[0] = s;
+		matrix[1] = NULL;
+		return (matrix);
+	}
 	if (ft_split_words(matrix, s, c, words) == NULL)
 		return (NULL);
-	free(matrix);
 	return (matrix);
 }

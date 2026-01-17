@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 11:52:43 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 14:26:41 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 15:15:49 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 void	three_nbrs(t_stack **stack_a, t_stack **stack_b, t_stack **next)
 {
 	*next = (*stack_a)->next;
-	if ((*stack_a)->index == 1)
+	if ((*stack_a)->index == 0)
 	{
 		ft_sa(stack_a);
 		ft_ra(stack_a);
 	}
-	else if ((*stack_a)->index == 2)
+	else if ((*stack_a)->index == 1)
 	{
-		if ((*next)->index == 1)
+		if ((*next)->index == 0)
 			ft_sa(stack_a);
 		else
 			ft_rra(stack_a);
 	}
 	else
 	{
-		if ((*next)->index == 2)
+		if ((*next)->index == 1)
 		{
 			ft_sa(stack_a);
 			ft_rra(stack_a);
@@ -90,12 +90,12 @@ void	sort_time(t_stack **stack_a, t_stack **stack_b, int i)
 	int		curr_size;
 	char	*binary;
 
-	binary = malloc(sizeof(char) * 33);
-	if (!binary)
-		free_stacks(1, stack_a, stack_b);
 	curr_size = ft_lstsize(*stack_a);
 	if (curr_size <= 5)
 		sort_short(stack_a, stack_b, curr_size);
+	binary = malloc(sizeof(char) * 33);
+	if (!binary)
+		free_stacks(1, stack_a, stack_b);
 	while (curr_size--)
 	{
 		binary_conversion((*stack_a)->index, &binary);

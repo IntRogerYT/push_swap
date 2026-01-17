@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 11:03:21 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 13:25:28 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:26:25 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	free_stacks(int code_error, t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
-	if (*stack_a)
+	if (stack_a && *stack_a)
 	{
 		while (*stack_a)
 		{
@@ -35,7 +35,7 @@ void	free_stacks(int code_error, t_stack **stack_a, t_stack **stack_b)
 			free(temp);
 		}
 	}
-	if (*stack_b)
+	if (stack_b && *stack_b)
 	{
 		while (*stack_b)
 		{
@@ -52,7 +52,7 @@ void	free_and_finish(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
 
-	if (*stack_a)
+	if (*stack_a && stack_a)
 	{
 		while (*stack_a)
 		{
@@ -61,7 +61,7 @@ void	free_and_finish(t_stack **stack_a, t_stack **stack_b)
 			free(temp);
 		}
 	}
-	if (*stack_b)
+	if (*stack_b && stack_b)
 	{
 		while (*stack_b)
 		{

@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 12:20:11 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:51:23 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int		*validate_and_parse(int argc, char **argv, int *size);
 int		num_args(char **args);
 char	**remove_first_arg(char **argv);
 int		*ft_atol_and_validation(char **matrix);
-void	nums_validation(long *nums_array, int len);
+void	nums_validation(long *nums_array, int len, char **matrix);
 int		*parse_one_arg(char *args, int *size);
 // === Utils functions ===
 void	free_and_exit(int code_error, char **matrix, long *nums_array);
@@ -97,5 +97,6 @@ void	four_five_nbrs(t_stack **stack_a, t_stack **stack_b, int curr_size);
 void	sort_five_nbrs(t_stack **stack_a, t_stack **stack_b);
 // === Main function ===
 void	sorting(t_stack **stack_a, t_stack **stack_b, int *size);
+void	check_input(char *args);
 int		main(int argc, char **argv);
 #endif

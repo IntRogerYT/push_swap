@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 12:05:23 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/16 15:18:36 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/17 14:17:54 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	set_index(t_stack **stack, int size)
 	int		i;
 	t_stack	*temp;
 
-	if (has_duplicates(*stack))
+	if (has_duplicates(*stack) == 1)
 		free_stacks(1, stack, NULL);
 	temp = *stack;
 	while (temp)
