@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:54:38 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/17 14:51:43 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/19 11:10:19 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,22 @@
 void	nums_validation(long *nums_array, int len, char **matrix)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (i < len)
 	{
 		if (nums_array[i] < INT_MIN || nums_array[i] > INT_MAX)
 			free_and_exit(1, matrix, nums_array);
+		j = i + 1;
+		while (j < len)
+		{
+			if (nums_array[i] == nums_array[j])
+			{
+				free_and_exit(1, matrix, nums_array);
+			}
+			j++;
+		}
 		i++;
 	}
 }
@@ -39,9 +49,9 @@ int	*ft_atol_and_validation(char **matrix)
 	i = -1;
 	while (matrix[++i])
 	{
-		if (ft_is_number(matrix[i]) == 1 || matrix[i][0] == '\0')
-			free_and_exit(1, matrix, temp);
 		temp[i] = ft_atol(matrix[i]);
+		if (temp[i] == LONG_MIN)
+			free_and_exit(1, matrix, temp);
 	}
 	nums_validation(temp, len, matrix);
 	nums_array = malloc(len * sizeof(int));

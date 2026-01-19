@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:47:36 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/17 15:15:23 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:19:59 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,17 @@ void	check_input(char *args)
 	matrix = ft_split(args, ' ');
 	while (matrix[i])
 		i++;
-	if (i == 1)
+	if (i == 1 || i == 0)
 	{
-		free(matrix);
-		exit(0);
+		if (i == 1 && ft_strlen(matrix[0]) > 11)
+			freem_and_exit(matrix, 0);
+		if (i == 1 && ft_is_number(matrix[i - 1]) == 1)
+			freem_and_exit(matrix, 0);
+		free_matrix(matrix);
+		exit(1);
 	}
+	else
+		free_matrix(matrix);
 }
 
 int	main(int argc, char **argv)

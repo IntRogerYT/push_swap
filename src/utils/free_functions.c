@@ -6,7 +6,7 @@
 /*   By: rcamps-v <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 11:03:21 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/17 14:26:25 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/19 15:22:35 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,16 +77,33 @@ void	free_matrix(char **matrix)
 {
 	int	i;
 
-	i = 0;
 	if (!matrix)
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
+		return ;
+	i = 0;
 	while (matrix[i])
 	{
 		free(matrix[i]);
 		i++;
 	}
 	free(matrix);
+}
+
+void	freem_and_exit(char **matrix, void *temp)
+{
+	int	i;
+
+	i = 0;
+	if (matrix)
+	{
+		while (matrix[i])
+		{
+			free(matrix[i]);
+			i++;
+		}
+		free(matrix);
+	}
+	if (temp)
+		free(temp);
+	write(2, "Error\n", 6);
+	exit(1);
 }

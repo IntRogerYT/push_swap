@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/17 14:51:23 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/19 14:49:18 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,14 @@ char	**remove_first_arg(char **argv);
 int		*ft_atol_and_validation(char **matrix);
 void	nums_validation(long *nums_array, int len, char **matrix);
 int		*parse_one_arg(char *args, int *size);
+int		*ft_atol_and_validation_args(char **matrix);
+void	nums_validation_args(long *nums_array, int len, char **matrix);
 // === Utils functions ===
 void	free_and_exit(int code_error, char **matrix, long *nums_array);
 void	free_stacks(int code_error, t_stack **stack_a, t_stack **stack_b);
 void	free_and_finish(t_stack **stack_a, t_stack **stack_b);
 void	free_matrix(char **matrix);
+void	freem_and_exit(char **matrix, void *temp);
 void	lst_conversion(t_stack **stack, int *nums_array, int size);
 // === Sorting ===
 int		has_duplicates(t_stack *stack);
