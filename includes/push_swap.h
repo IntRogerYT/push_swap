@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/19 14:49:18 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/21 12:22:05 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	freem_and_exit(char **matrix, void *temp);
 void	lst_conversion(t_stack **stack, int *nums_array, int size);
 // === Sorting ===
 int		has_duplicates(t_stack *stack);
+int		get_min_pos(t_stack *stack);
 void	binary_conversion(int n, char **binary);
 t_stack	*find_lowest(t_stack *stack);
 void	set_index(t_stack **stack, int size);
@@ -95,7 +96,7 @@ int		check_order(t_stack *stack, int size);
 void	radix_sort(t_stack **stack_a, t_stack **stack_b, int *size);
 void	sort_time(t_stack **stack_a, t_stack **stack_b, int i);
 void	sort_short(t_stack **stack_a, t_stack **stack_b, int curr_size);
-void	three_nbrs(t_stack **stack_a, t_stack **stack_b, t_stack **next);
+void	three_nbrs(t_stack **a);
 void	four_five_nbrs(t_stack **stack_a, t_stack **stack_b, int curr_size);
 void	sort_five_nbrs(t_stack **stack_a, t_stack **stack_b);
 // === Main function ===
