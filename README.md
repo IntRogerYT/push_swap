@@ -1,4 +1,4 @@
-*Este proyecto ha sido creado como parte del currículum de 42 por <rcamps-v>.*
+*Este proyecto ha sido creado como parte del currículum de 42 por [rcamps-v]().*
 
 # Push\_swap
 
