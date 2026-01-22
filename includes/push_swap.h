@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/02 13:18:04 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/21 12:22:05 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:02:25 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ void	three_nbrs(t_stack **a);
 void	four_five_nbrs(t_stack **stack_a, t_stack **stack_b, int curr_size);
 void	sort_five_nbrs(t_stack **stack_a, t_stack **stack_b);
 // === Main function ===
+int		ft_numlen(char *s);
+int		max_min_int(char *str);
 void	sorting(t_stack **stack_a, t_stack **stack_b, int *size);
 void	check_input(char *args);
 int		main(int argc, char **argv);

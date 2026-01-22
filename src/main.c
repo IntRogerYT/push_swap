@@ -6,11 +6,38 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 18:47:36 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/19 15:19:59 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:55:13 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_numlen(char *s)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (s[i] && s[i] == ' ')
+		i++;
+	while (s[i] && s[i] != ' ')
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+int	max_min_int(char *str)
+{
+	long	num;
+
+	num = ft_atol(str);
+	if (num > INT_MAX || num < INT_MIN)
+		return (1);
+	return (0);
+}
 
 void	sorting(t_stack **stack_a, t_stack **stack_b, int *size)
 {
@@ -23,19 +50,21 @@ void	check_input(char *args)
 {
 	char	**matrix;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	matrix = ft_split(args, ' ');
 	while (matrix[i])
 		i++;
 	if (i == 1 || i == 0)
 	{
-		if (i == 1 && ft_strlen(matrix[0]) > 11)
+		if (i == 1 && max_min_int(matrix[0]) == 1)
 			freem_and_exit(matrix, 0);
-		if (i == 1 && ft_is_number(matrix[i - 1]) == 1)
+		if (i == 1 && ft_is_number(matrix[0]) == 1)
 			freem_and_exit(matrix, 0);
 		free_matrix(matrix);
-		exit(1);
+		exit(0);
 	}
 	else
 		free_matrix(matrix);

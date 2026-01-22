@@ -6,7 +6,7 @@
 /*   By: rcamps-v <rcamps-v@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:14:43 by rcamps-v          #+#    #+#             */
-/*   Updated: 2026/01/19 15:18:13 by rcamps-v         ###   ########.fr       */
+/*   Updated: 2026/01/22 14:00:36 by rcamps-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ size_t	ft_startpos(char const *s, char c)
 	size_t	i;
 
 	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -97,7 +99,7 @@ char	**ft_split(char *s, char c)
 		return (NULL);
 	if (words == 1)
 	{
-		matrix[0] = ft_strdup(s);
+		matrix[0] = ft_substr(s, (ft_startpos(s, c) - 1), ft_numlen(s));
 		matrix[1] = NULL;
 		return (matrix);
 	}
